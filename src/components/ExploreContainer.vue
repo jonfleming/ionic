@@ -1,43 +1,70 @@
 <template>
-  <div id="container">
-    <strong>{{ name }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+	<div id="container">
+		<strong>{{ name }}</strong>
+		<p>
+			Explore
+			<a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"
+				>UI Components</a
+			>
+		</p>
+
+		<div class="ion-activatable ripple-parent">
+			A plain div with a bounded ripple effect
+			<ion-ripple-effect></ion-ripple-effect>
+		</div>
+
+		<button class="ion-activatable ripple-parent">
+			A button with a bounded ripple effect
+			<ion-ripple-effect></ion-ripple-effect>
+		</button>
+
+		<div class="ion-activatable ripple-parent">
+			A plain div with an unbounded ripple effect
+			<ion-ripple-effect type="unbounded"></ion-ripple-effect>
+		</div>
+
+		<button class="ion-activatable ripple-parent">
+			A button with an unbounded ripple effect
+			<ion-ripple-effect type="unbounded"></ion-ripple-effect>
+		</button>
+	</div>
 </template>
 
 <script lang="ts">
+import { IonRippleEffect } from '@ionic/vue';
 
 export default {
-  name: 'ExploreContainer',
-  props: {
-    name: String
-  }
-}
+	name: 'ExploreContainer',
+  components: { IonRippleEffect },
+	props: {
+		name: String,
+	},
+};
 </script>
 
 <style scoped>
 #container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 #container strong {
-  font-size: 20px;
-  line-height: 26px;
+	font-size: 20px;
+	line-height: 26px;
 }
 
 #container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
+	font-size: 16px;
+	line-height: 22px;
+	color: #8c8c8c;
+	margin: 0;
 }
 
 #container a {
-  text-decoration: none;
+	text-decoration: none;
 }
 </style>
